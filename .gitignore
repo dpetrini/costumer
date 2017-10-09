@@ -1,0 +1,9 @@
+.nyc_output/
+coverage/
+node_modules/
+.vscode/
+models/Device_data_thModel-mongoose.js
+models/StormtrooperModel-mongoose.js
+tests/fixtures.1.js
+out/
+doc/

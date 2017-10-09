@@ -1,0 +1,10 @@
+{
+  "appName": "users",
+  "mongo": {
+    "server": "cluster0-shard-00-00-muruw.mongodb.net",
+    "port": 27017,
+    "replicaset": ",cluster0-shard-00-01-muruw.mongodb.net:27017,cluster0-shard-00-02-muruw.mongodb.net:27017",
+    "database": "COSTUMERS",
+    "ssl":"?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin"
+  }
+}

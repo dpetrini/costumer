@@ -1,0 +1,34 @@
+{
+  "name": "solar-cost-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test2": "export DEBUG=donors:* && mocha tests/unit/*",
+    "test-api": "export DEBUG=donors:* && export NODE_ENV=test && mocha tests/api/*",
+    "testhtml": "export DEBUG=donors:* && nyc --reporter=html --reporter=text mocha tests/unit/*",
+    "testhtml-api": "export DEBUG=donors:* && export NODE_ENV=test && nyc --reporter=html --reporter=text mocha tests/api/*",
+    "nodemon": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.17.1",
+    "config": "^1.26.2",
+    "connect-mongo": "^1.3.2",
+    "cors": "^2.8.4",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^3.2.1",
+    "method-override": "^2.3.9",
+    "mongojs": "^2.4.1",
+    "pug": "^2.0.0-rc.3",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-recommended": "^1.5.0",
+    "eslint-plugin-import": "^2.7.0",
+    "supertest": "^3.0.0"
+  }
+}
