@@ -15,4 +15,7 @@ router.use('/check', require('./check'));
 // Sign Up/ Login / Profile / Logout
 router.use('/users', require('./users'));
 
+// Sign Up/ Login / Profile / Logout
+router.use('/proposals', require('./proposals'));
+
 module.exports = router;
