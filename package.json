@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test2": "export DEBUG=donors:* && mocha tests/unit/*",
-    "test-api": "export DEBUG=donors:* && export NODE_ENV=test && mocha tests/api/*",
-    "testhtml": "export DEBUG=donors:* && nyc --reporter=html --reporter=text mocha tests/unit/*",
-    "testhtml-api": "export DEBUG=donors:* && export NODE_ENV=test && nyc --reporter=html --reporter=text mocha tests/api/*",
+    "test2": "export DEBUG=users:* && mocha tests/unit/*",
+    "test-api": "export DEBUG=users:* && export NODE_ENV=test && mocha tests/api/*",
+    "testhtml": "export DEBUG=users:* && nyc --reporter=html --reporter=text mocha tests/unit/*",
+    "testhtml-api": "export DEBUG=users:* && export NODE_ENV=test && nyc --reporter=html --reporter=text mocha tests/api/*",
     "nodemon": "nodemon ./bin/www"
   },
   "dependencies": {
