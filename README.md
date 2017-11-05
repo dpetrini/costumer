@@ -20,14 +20,6 @@ The source files are divided in folders inside js/source directory as follows:
 
 ## API
 
-### GET /api/donors/{id}
-Login entry point.
-
-#### Response
-| HTTP       | Value     |
-|------------|-----------|
-| Body       | { "_id", "firstName", "lastName", "contactNumber", "emailAddress", "bloodGroup"} |
-
 ### POST /users/loginclient
 Login entry point.
 
@@ -97,7 +89,7 @@ npm test-html
 
 ## How to Run
 
-Download this repository. And export the above environment variables.
+Download this repository. And export the above environment variables, then make sure to open react app.
 
 Using npm:
 ```
