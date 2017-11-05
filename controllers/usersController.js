@@ -90,6 +90,7 @@ usersController.prototype.authenticate = function (request, response, next) {
 
 			bcrypt.compare(request.body.password, user[0].password, (error, result) => {
 				if (result === true) {
+					debug('Match user:', user[0].email);
 					request.session.userId = user[0]._id;
 					return response.redirect('/users/profile');
 				}
@@ -101,6 +102,37 @@ usersController.prototype.authenticate = function (request, response, next) {
 	}
 };
 
+// authenticate for react client, send res json OK
+usersController.prototype.authenticateClient= function (request, response, next) {
+
+	if (request.body.email
+		&& request.body.password) {
+
+		this.model.find({ email: request.body.email }, (err, user) => {
+
+			debug('Authenticate user:', user);
+
+			if (err) {
+				return next(err);
+			} else if (!user[0]) {
+				const err = new Error('User not found.');
+				err.status = 401;
+				return next(err);
+			}
+
+			bcrypt.compare(request.body.password, user[0].password, (error, result) => {
+				if (result === true) {
+					debug('Match user:', user[0].email);
+					request.session.userId = user[0]._id;
+					return response.json('OK');
+				}
+				const err = new Error('Wrong email or password.');
+				err.status = 401;
+				return next(err);
+			});
+		});
+	}
+};
 
 usersController.prototype.showProfile = function (request, response, next) {
 
@@ -132,6 +164,19 @@ usersController.prototype.logout = function (request, response, next) {
 				return next(err);
 			} 
 			return response.redirect('/users/login');
+		});
+	}
+};
+
+
+usersController.prototype.logoutClient = function (request, response, next) {
+	if (request.session) {
+    // delete session object
+		request.session.destroy((err) => {
+			if (err) {
+				return next(err);
+			} 
+			return response.json('OK');
 		});
 	}
 };

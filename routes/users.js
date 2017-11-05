@@ -11,6 +11,7 @@ router.get('/login', mid.loggedOut, (req, res, next) => {
   res.render('login', { title: 'Login' });
 });
 router.post('/login', usersController.authenticate.bind(usersController));
+router.post('/loginclient', usersController.authenticateClient.bind(usersController));
 
 /* REGISTER */
 router.get('/register', mid.loggedOut, (req, res, next) => {
@@ -23,5 +24,6 @@ router.get('/profile', mid.requiresLogin, usersController.showProfile.bind(users
 
 /* LOGOUT */
 router.get('/logout', usersController.logout.bind(usersController));
+router.get('/logoutclient', usersController.logoutClient.bind(usersController));
 
 module.exports = router;
