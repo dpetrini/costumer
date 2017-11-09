@@ -13,7 +13,7 @@ const debug = require('debug')(config.get('appName') + ':proposals:Model');
 class proposalsModel {
     constructor(mongo) {
         this.mongo = mongo;
-        this.mongo.collection('proposals').createIndex({ "email": 1 }, { "unique": true });
+        // this.mongo.collection('proposals').createIndex({ "email": 1 }, { "unique": true });
     }
     find(query, callback) {
         this.mongo.collection('proposals').find(query, callback);

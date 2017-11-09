@@ -13,10 +13,10 @@ const proposalsController = require('../controllers/proposalsController')(propos
 // const proposalsController = new propController(proposalsModel);
 
 /* LOG IN  */
-// router.get('/proposal', mid.loggedOut, (req, res, next) => {
-//   res.render('login', { title: 'Login' });
-// });
 router.get('/', (req, res, next) => { 
+  proposalsController.getAll(req, res, next);
+});
+router.post('/', (req, res, next) => { 
   proposalsController.createNew(req, res, next);
 });
 
