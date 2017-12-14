@@ -19,7 +19,8 @@ class costumersController {
         console.log(request.query)
         console.log(request.body)
 
-        if (true) {
+        // minimum check
+        if (request.body.email !== null) {
             
             // create object with form input
             const costumerData = {

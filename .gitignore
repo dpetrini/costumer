@@ -7,3 +7,4 @@ models/StormtrooperModel-mongoose.js
 tests/fixtures.1.js
 out/
 doc/
+default.json-bk

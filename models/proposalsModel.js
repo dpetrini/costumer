@@ -18,20 +18,6 @@ class proposalsModel {
     find(query, callback) {
         this.mongo.collection('proposals').find(query, callback);
     }
-    // Special guys to be used by controllers -- passar para controller algo??
-    // Sends projection to controllers, as a parameter (may be the best option to
-    //   be followed by others, we don´t want to see field names here).
-    find2(query, projection, callback) {
-        this.mongo.collection('proposals').find(query, projection, callback);
-    }
-    // Projection: select the fields that will return
-    findProjection(query, callback) {
-        this.mongo.collection('proposals').find(query, { firstName: 1, lastName: 1, _id: 0 }, callback);
-    }
-    // Limit number of returned docs. (can use skip too)
-    find50(query, callback) {
-        this.mongo.collection('proposals').find(query).limit(50, callback);
-    }
     // Sort By the indicated field
     findSorted(query, callback) {
         this.mongo.collection('proposals').find(query).sort({ firstName: 1 }, callback);

@@ -18,7 +18,6 @@ router.use('/users', require('./users'));
 // Sign Up/ Login / Profile / Logout
 router.use('/proposals', require('./proposals'));
 
-
 // Costumers collection
 router.use('/costumers', require('./costumers'));
 

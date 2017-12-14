@@ -13,9 +13,6 @@ const costumersController = require('../controllers/costumersController')(costum
 // const costumersController = new propController(costumersModel);
 
 /* LOG IN  */
-// router.get('/proposal', mid.loggedOut, (req, res, next) => {
-//   res.render('login', { title: 'Login' });
-// });
 router.post('/', (req, res, next) => { 
   costumersController.createNew(req, res, next);
 });

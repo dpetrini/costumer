@@ -8,14 +8,14 @@ const usersController = require('../controllers/usersController')(usersModel);
 
 /* LOG IN  */
 router.get('/login', mid.loggedOut, (req, res, next) => {
-  res.render('login', { title: 'Login' });
+  res.render('login', { title: 'Login' }); // Temporary keep
 });
 router.post('/login', usersController.authenticate.bind(usersController));
 router.post('/loginclient', usersController.authenticateClient.bind(usersController));
 
 /* REGISTER */
 router.get('/register', mid.loggedOut, (req, res, next) => {
-    res.render('register', { title: 'Sign Up' });
+    res.render('register', { title: 'Sign Up' }); // Temporary keep
   });
 router.post('/register', usersController.createNew.bind(usersController));
 
